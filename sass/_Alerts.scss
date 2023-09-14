@@ -1,0 +1,53 @@
+@use "mixin";
+$Message-color: rgb(136, 136, 227);
+$danger-color:darkred;
+$alert-color:rgb(206, 196, 49);
+$success-color:darkgreen;
+$boolen:true;
+
+
+%Al{
+    border: solid black 1px;
+    border-radius: 5px;
+    width: 50%;
+    height: 50px;
+    position: relative;
+    left: 2%;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-self: start;
+    padding: 3px 6px ;
+    overflow: hidden;
+    @include mixin.Hover(1.05);
+    animation: deplacement 4s linear 5s forwards;
+}
+
+@keyframes deplacement {
+  to {
+    left: 100%;
+    opacity: 0;
+  }
+}
+div[role='Message'] {
+    @extend %Al;
+    @include mixin.Alerts($CO: $Message-color, $TCO: BLUE);
+  }
+  
+
+  div[role='Alert']  {
+    @extend  %Al ;
+    @include mixin.Alerts($alert-color, $TCO: red ) ;
+}
+
+div[role='Danger']  {
+    @extend  %Al ;
+    @include mixin.Alerts($danger-color , $TCO: black) ;
+}
+
+div[role='success']  {
+    @extend  %Al ;
+    @include mixin.Alerts($success-color, $TCO: black ) ;
+}
+
+
