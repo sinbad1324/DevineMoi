@@ -1,0 +1,82 @@
+@mixin Alerts($CO , $TCO) {
+  color: $TCO;
+  background-color: $CO;
+  $rgba-color: $CO; // Convertissez $CO en une couleur RGBA avec une opacité de 0.25
+  box-shadow: 0px 0px 10px $rgba-color; // Utilisez la couleur RGBA dans la boîte d'ombre
+}
+
+@mixin Hover($scl){
+&:hover{
+transform: scale($scl);
+@content
+}
+}
+
+@mixin SpaceLineFlex(){
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+}
+
+@mixin btnWithColor($BGCBTN ,$TCo,$BorderNO1NavBtn) {
+  padding: 10px 18px ;
+  text-align:center;
+  background-color: $BGCBTN;
+  border-radius: 5px;
+  color:$TCo;
+  border:$BorderNO1NavBtn;
+}
+
+@mixin FlexCR($a:end , $b:center){
+  display: flex;
+  align-items: $b;
+  justify-content: $a;
+}
+/*
+@mixin CountRondONly( $come , $N , $tops , $lefts ){
+  @for $i from 1 through $N {
+      opacity: 0.5;
+      position: absolute;
+      top: nth($tops, $i);
+      left: nth($lefts, $i);
+  }
+}*/
+
+@mixin forIV1Rond($N, $letruc, $No1, $No2) {
+  @for $i from 1 through $N {
+    #{$letruc}#{$i} {
+      opacity: 0.4;
+      z-index: 2;
+      position: absolute;
+      top: nth($No1, $i);
+      left: nth($No2, $i);
+    }
+  }
+}
+
+@mixin HoverAnim1(){
+ &::after{
+    content: "wefwef";
+    z-index: 30;
+    position:relative;
+    right: 0%;
+    top: 20px;
+    height: 20px;
+    width:100%;
+    background:#f50000;
+    transform: translateX(-200%);
+    transform-origin:right ;
+    transition: transform 1s linear;
+  }
+  &:hover::after{
+    transform: translateX(-100%);
+    transform-origin:left ;
+  }
+}
+@mixin MaxW($Hmc){
+  @media (max-width:$Hmc) {
+    @content
+  }
+}
+
