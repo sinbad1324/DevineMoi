@@ -1,2 +1,0 @@
-C:\Users\41794\OneDrive\Bureau\Apprendre_A_Coder_16.8.2023\SASS!SCSS_.03.09.2023\dart-sass\sass sass/style.scss CSS/newstylecss.css --watch
-                                                                                         ::Adresse du fichier SCSS  ::ET LA CSS              
