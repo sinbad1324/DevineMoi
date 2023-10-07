@@ -1,0 +1,112 @@
+@use "mixin";
+@use "Functions";
+$TPW:90%;
+$Letrucs:'.svgR';
+$lechoisTops:20px , -250px , -70% , 15%;
+$lechoisLefts:60% , 30% , 80% , -10%;
+.TextPub{
+    @include mixin.CenterW($TPW);
+    height:600px;
+    display: flex;
+    top:25vh;
+    flex-direction: column;
+}
+%WHBord{
+    box-shadow: 0 0 10px rgba(black, .5) ;
+
+}
+
+.Explique{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+    flex-wrap: wrap;
+     
+    div{
+        margin: 0px 10px ;
+        width: 35%;
+        position: relative;
+        left: RxL(var(--po) , 35%);
+        height: 300px;
+        p{
+            font-size:1.1em;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h1{ 
+            font-size:1.5em;
+            width: 110%;
+            word-wrap:none;
+        }
+    }
+    .po2{
+        left: calc(50%  + (35% /3));
+
+    }
+    img{
+        position: absolute;
+        width: 400px;
+        height: 300px;
+        top: 2;
+        border-radius:10px ;
+        @extend %WHBord;
+        @include mixin.Hover(1.02);
+
+
+    }
+    [usemap="Imag-Map01"] {
+        left: 65%;
+    }
+    [usemap="Imag-Map2"] {
+        left: 65%;
+        height: 350px;
+
+    }
+
+}
+
+aside{
+display:inline-block;
+height:300px;
+width: $TPW;
+text-align: center;
+@include mixin.CenterW($TPW);
+top: 600px;
+background-color: rgb(59, 142, 244);
+border-radius: 10px;
+overflow: hidden;
+a{
+    z-index: 3;
+    @include mixin.Hover(1.2);
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    display:inline-block;   
+    text-decoration: none;
+    background-color: blue;
+    padding: 20px 30px;
+    color: black;
+    font-size: 25px;
+    border-radius: 10px;
+    position: relative;
+    top: 25%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(black, .5) ;
+
+}
+h1{
+    z-index: 3;
+    font-family:'Raleway', sans-serif;   /* 'Roboto Slab' */
+    font-weight:bold;
+    font-size: 1.5em;
+   
+}
+svg{
+    z-index: 1;
+    position:absolute;
+    width: 500px;
+    height: 500px;
+    opacity: 0.5;
+}
+}
+
+@include mixin.forIV1Rond(4,$Letrucs,$lechoisTops , $lechoisLefts);
+

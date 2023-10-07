@@ -1,0 +1,10 @@
+@function PlaceCenter( $size-x){
+    @return ($size-x - 90%) /2;
+}
+
+@function RxL($value , $w){
+    @if $value == '2' {
+        @return 50% + $w
+    
+    }
+}
